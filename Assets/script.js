@@ -7,8 +7,7 @@ $(function () {
     event.preventDefault();
     var saveHourElChild = $(this);
     saveHourID = saveHourElChild.parent().attr("id");
-    console.log(saveHourID);
-    saveData();
+    saveData(); //call function to save user input
   });
 
   //Use dayjs to find current hour
@@ -34,28 +33,24 @@ $(function () {
     }
   }
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+  //loop searching for data for each hour ID in localStorage
   for (i = 0; i < hourContainer.length - 3; i++) {
     var hourAtHand = hourContainer.eq(i);
     hourID = hourAtHand.attr("id");
-    console.log(hourID);
     hourText = localStorage.getItem(hourID);
-    console.log(hourText);
 
+    //conditional to check if data exists, and if it does it will be inserted into the proper text box
     if (hourText !== null) {
       hourTextEl = hourAtHand.children().eq(1);
-      console.log(hourTextEl);
       hourAtHand.children().eq(1).val(hourText);
     }
   }
+  //function to save user input data into local storage
   function saveData() {
     var saveTextArea = $("#" + saveHourID)
       .children()
       .eq(1);
     var userInput = saveTextArea.val();
-    console.log(userInput);
     localStorage.setItem(saveHourID, userInput);
   }
   // TODO: Add code to display the current date in the header of the page.
