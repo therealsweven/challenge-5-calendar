@@ -37,27 +37,27 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  // for (i = 0; i < hourContainer.length - 3; i++) {
-  //   var hourAtHand = hourContainer.eq(i);
-  //   hourID = hourAtHand.attr("id");
-  //   console.log(hourID);
-  //   hourText = localStorage.getItem(hourID);
-  //   console.log(hourText);
+  for (i = 0; i < hourContainer.length - 3; i++) {
+    var hourAtHand = hourContainer.eq(i);
+    hourID = hourAtHand.attr("id");
+    console.log(hourID);
+    hourText = localStorage.getItem(hourID);
+    console.log(hourText);
 
-  //   if (hourText !== null) {
-  //     hourTextEl = hourAtHand.children().eq(1);
-  //     console.log(hourTextEl);
-  //     hourAtHand.children().eq(1).val(hourText);
-  //   }
-  // }
-  // function saveData() {
-  //   var saveTextArea = $("#" + saveHourID)
-  //     .children()
-  //     .eq(1);
-  //   var userInput = saveTextArea.val();
-  //   console.log(userInput);
-  //   localStorage.setItem(saveHourID, userInput);
-  // }
+    if (hourText !== null) {
+      hourTextEl = hourAtHand.children().eq(1);
+      console.log(hourTextEl);
+      hourAtHand.children().eq(1).val(hourText);
+    }
+  }
+  function saveData() {
+    var saveTextArea = $("#" + saveHourID)
+      .children()
+      .eq(1);
+    var userInput = saveTextArea.val();
+    console.log(userInput);
+    localStorage.setItem(saveHourID, userInput);
+  }
   // TODO: Add code to display the current date in the header of the page.
   $("#currentDay").text(today.format("dddd, MMMM D"));
 });
