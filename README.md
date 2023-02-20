@@ -4,11 +4,10 @@ Interactive calendar application
 
 ## Description
 
-A user that handles sensitive data wanted to create a randomized password to improve security. The user wanted to be able to give specific parameters to assist in creating the password. The user wants to decide the character length (between 8 and 128 characters) as well as whether it will or will not include lowercase letters, uppercase letters, numbers, and special characters. This password generator satisfies all the criteria the user insisted on allowing a random password to be created utilizing user specified parameters.
-
+An employee with a busy schedule wants a simple daily planner to add important events to so they can manage their time effectively. This web app needed to track user input data even if the browser is closed or refreshed. The employee wantedto be able to visibly see where they are in there day timewise.  
 ![Screenshot](Screenshot.png)
 
-URL: https://therealsweven.github.io/challenge-3-password-generator/
+URL: https://therealsweven.github.io/challenge-5-calendar/
 
 ## Installation
 
@@ -16,7 +15,7 @@ N/A
 
 ## Usage
 
-This web app contains a random password generated. To generate a password, start by clicking the red "Generate Password" button. The user will then be prompted to answer the following questions. How many characters? (The function will not allow the user to proceed until they have selected a number between 8 and 128) Include lowercase letters? Include uppercase letters? Include numbers? Include special characters? For the previous 4 prompts the user will click "confirm" for yes and "cancel" for no. A password mathcing the user constraints will then be generated using a JavaScript function and displayed in the box beneath the words "Generate a Password".
+This web app contains a simple day planner with hours ranging fom 9AM to 9PM. The user may input whatever text they would like in each hour slot and click the save button to save the input text in local storage. On load or refresh, the code pulls the currently save localStorage data and displays it in each corresponding text area so the user can see what they had put in there previously. The app compares the current hour to each hour block and applies custom styling so the user may see how far along they are in there day. The red block is the current hour, gray blocks are hours that have already passed, and green blocks are hours the user has not reached yet in their day. The planner displays the current weekday and date in the header for reference.
 
 ## Credits
 
